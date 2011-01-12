@@ -1,0 +1,26 @@
+<%@ jet package="edu.bth.spla.calculator.code.java" class="TOperations" imports="edu.bth.spla.calculator.model.*"%>
+<% CalculatorModel model = (CalculatorModel) argument; %>
+#############################
+# OPERATORS CONFIGURATION FILE
+#############################
+# Format: operator mathematical_representation
+#
+<% if(model.getOperations().contains(Operation.ARITHMETIC)){%>
++ +
+- -
+= =
+* *
+/ /
+<%}%>
+<% if(model.getOperations().contains(Operation.ABS)){%>
+~ Math.abs(y)
+<%}%>
+<% if(model.getOperations().contains(Operation.POW)){%>
+^ Math.pow(x,y)
+<%}%>
+<% if(model.getOperations().contains(Operation.SQRT)){%>
+s Math.sqrt(y)
+<%}%>
+<% if(model.getOperations().contains(Operation.EXP)){%>
+e Math.exp(y)
+<%}%>

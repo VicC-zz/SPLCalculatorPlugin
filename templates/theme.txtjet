@@ -1,0 +1,15 @@
+<%@ jet package="edu.bth.spla.calculator.code.java" class="TThemeProperties" imports="edu.bth.spla.calculator.model.*"%>
+<% CalculatorModel model = (CalculatorModel) argument; %>
+#############################
+# THEME CONFIGURATION FILE
+#############################
+# input_method E {buttons, text}, buttons is default
+# output_mode E {text1row, text2rows}, text1row is default
+# bg_image is a path to the image
+input_method=<% if(model.getInput().equals(Input.KEYBOARD)){%>text<%}%><% if(model.getInput().equals(Input.MOUSE)){%>buttons<%}%>
+output_mode=<%if(model.getOutput().equals(Output.ONE_ROW)){%>text1row<%}%><% if(model.getOutput().equals(Output.TWO_ROW)){%>text2rows<%}%>
+bg_image=<%=model.getTheme().getBgImage()%>
+bg_color=<%=model.getTheme().getBgColor()%>
+fg_button=<%=model.getTheme().getFgButton()%>
+bg_display=<%=model.getTheme().getBgDisplay()%>
+fg_display=<%=model.getTheme().getFgDisplay()%>

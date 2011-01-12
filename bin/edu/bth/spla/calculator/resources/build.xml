@@ -1,0 +1,38 @@
+<!-- Software Product Lines Architecture-->
+<project name="spl.calculator" basedir="./" default="createJar">
+	<property name="srcDir" value="src" />
+	<property name="compileDir" value="classes" />
+	<property name="deployDir" value="deploy" />
+	<property name="libFile" value="calculator.jar" />
+	<property name="libs.project" value="calculator.jar" />
+
+	<target name="clean">
+		<delete dir="classes" />
+	</target>
+
+	<target name="compile" depends="clean">
+		<mkdir dir="${compileDir}" />
+		<javac destdir="${compileDir}" srcdir="${srcDir}" fork="true" debug="true" includes="">
+		</javac>
+		<copy verbose="true" todir="${compileDir}" >
+			<fileset dir="${srcDir}">
+			<include name="**/*.properties" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="createJar" depends="compile">
+		<mkdir dir="${deployDir}" />
+		<jar destfile="${deployDir}/${libFile}" basedir="classes">
+			<manifest>
+				<attribute name="Main-Class" value="com.spl.gui.Calculator" />
+				<!-- finally, use the magically generated libs path -->
+				<attribute name="Class-Path" value="${libs.project}" />
+			</manifest>
+		</jar>
+		<exec executable="java" >
+			<arg value="-jar"/>
+			<arg value="${deployDir}/${libFile}"/>
+		</exec>
+	</target>
+</project>

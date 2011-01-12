@@ -1,0 +1,9 @@
+<%@ jet package="edu.bth.spla.calculator.code.java" class="TSymbols" imports="edu.bth.spla.calculator.model.*"%>
+<% CalculatorModel model = (CalculatorModel) argument; %>
+#############################
+# SYMBOLS CONFIGURATION FILE
+#############################
+# numbers E {0,1,2,3,4,5,6,7,8,9,.}, 0-9 is default
+# operators E {+,-,*,/,^,e,~,s,(,)}, arithmetic + - * / are default
+numbers=0,1,2,3,4,5,6,7,8,9<% if(model.getType().equals(Type.ADULT)){%>,.<%}%>
+operators=<% if(model.getOperations().contains(Operation.ARITHMETIC)){%>+,-,*,/<%}%><%if(model.getOperations().contains(Operation.ABS)){%>,~<%}%><% if(model.getOperations().contains(Operation.EXP)){%>,e<%}%><% if(model.getOperations().contains(Operation.POW)){%>,^<%}%><% if(model.getOperations().contains(Operation.SQRT)){%>,s<%}%><% if(model.getType().equals(Type.ADULT)){%>,(,)<%}%>

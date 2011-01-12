@@ -1,0 +1,8 @@
+<%@ jet package="edu.bth.spla.calculator.code.java" class="TModelObserver" imports="edu.bth.spla.calculator.model.*"%>
+<% CalculatorModel model = (CalculatorModel) argument; %>
+package com.spl.model;
+
+public interface ModelObserver {
+	
+	public void notifyObserver(String output);
+}

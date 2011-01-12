@@ -1,0 +1,8 @@
+<%@ jet package="edu.bth.spla.calculator.code.java" class="TILogicalManager" imports="edu.bth.spla.calculator.model.*"%>
+<% CalculatorModel model = (CalculatorModel) argument; %>
+package com.spl.math;
+
+public interface ILogicalManager {
+	
+	public void performOperation();
+}

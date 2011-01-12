@@ -1,0 +1,7 @@
+<%@ jet package="edu.bth.spla.calculator.code.java" class="TdataType" imports="edu.bth.spla.calculator.model.*"%>
+<% CalculatorModel model = (CalculatorModel) argument; %>
+#############################
+# DATA TYPE CONFIGURATION FILE
+#############################
+# data_type E {integer, float}, integer is default
+data_type=<% if(model.getType().equals(Type.ADULT)){%>float<%}%><% if(model.getType().equals(Type.CHILD)){%>integer<%}%>

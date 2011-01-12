@@ -1,0 +1,6 @@
+<%@ jet package="edu.bth.spla.calculator.code.java" class="TIInputView" imports="edu.bth.spla.calculator.model.*"%>
+package com.spl.input;
+
+public interface IInputView {
+
+}
